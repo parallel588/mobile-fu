@@ -55,7 +55,7 @@ module ActionController
       def has_mobile_fu(set_request_format = true)
         include ActionController::MobileFu::InstanceMethods
 
-        before_filter :set_request_format if set_request_format
+        before_action :set_request_format if set_request_format
 
         helper_method :is_mobile_device?
         helper_method :is_tablet_device?
