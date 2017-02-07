@@ -19,8 +19,7 @@ module MobileFu
 
       initializer "mobile-fu.action_view" do |app|
         ActiveSupport.on_load :action_view do
-          include MobileFu::Helper
-          alias_method_chain :stylesheet_link_tag, :mobilization
+          prepend MobileFu::Helper
         end
       end
     end
